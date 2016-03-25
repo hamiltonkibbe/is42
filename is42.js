@@ -19,7 +19,8 @@ module.exports = {
             (value == 42) ||
             (value === 'forty two') ||
             (value === 'forty-two') || 
-            (value === 'fortytwo')
+            (value === 'fortytwo') ||
+            (value.length === 42)
         );
     },
 }
