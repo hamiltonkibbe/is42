@@ -28,7 +28,10 @@ describe('#Handling of 42', function() {
 
     it('verifies that "forty-two" is 42', function() {
         is42.is42('forty-two').should.equal(true);
-    })
+    });
+    it('verifies that a string of length 42 is 42', function() {
+        is42.is42('abcdefgabcdefgabcdefgabcdefgabcdefgabcdefg').should.equal(true);
+    });
 });
 
 describe('#Handling of things other than 42', function() { 
@@ -42,5 +45,8 @@ describe('#Handling of things other than 42', function() {
 
     it('Verifies that undefined is not 42', function() {
         is42.is42(undefined).should.equal(false);
+    });
+    it('Verifies that a string of other than 42 characters is not 42', function() {
+        is42.is42('abcd').should.equal(false);
     });
 });
