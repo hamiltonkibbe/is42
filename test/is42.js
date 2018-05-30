@@ -31,6 +31,16 @@ describe('#Handling of 42', function() {
     })
 });
 
+describe('#Handling of 42 in other languages', function() {
+    it('Verifies that "quarantadue" is 42', function() {
+        is42.is42("quarantadue").should.equal(true);   
+    });
+
+    it('Verifies that "quarante-deux" is 42', function() {
+        is42.is42("quarante-deux").should.equal(true);
+    });
+});
+
 describe('#Handling of things other than 42', function() { 
     it('Verifies that 55 is not 42', function() {
         is42.is42(55).should.equal(false);
