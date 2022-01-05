@@ -13,13 +13,28 @@
 // IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 
+const languages = {
+    en: ['forty two', 'forty-two', 'fortytwo'],
+    it: ['quarantadue'],
+    fr: ['quarante-deux', 'quarante deux']
+}
+
+function checkAllLanguages (value) {
+    for (language in languages) {
+        for (i = 0; i < languages[language].length; i++) {
+            if (value === languages[language][i]) {
+                return true
+            } 
+        }
+    }
+    return false
+}
+
 module.exports = {
     is42: function(value) {
         return (
-            (value == 42) ||
-            (value === 'forty two') ||
-            (value === 'forty-two') || 
-            (value === 'fortytwo')
+            (value == 42) || 
+                checkAllLanguages(value)
         );
     },
 }
